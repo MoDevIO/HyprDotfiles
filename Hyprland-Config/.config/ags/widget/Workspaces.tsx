@@ -60,7 +60,11 @@ const ICON_OVERRIDES: Record<string, string> = {
   // "chromium": "youtube",
 }
 
-function resolveIcon(windowClass: string, initialClass?: string, title?: string): string {
+function resolveIcon(
+  windowClass: string,
+  initialClass?: string,
+  title?: string,
+): string {
   // Build a cache key from all identifiers
   const cacheKey = `${windowClass}|${initialClass ?? ""}|${title ?? ""}`
   if (iconCache.has(cacheKey)) return iconCache.get(cacheKey)!
@@ -89,7 +93,8 @@ function resolveIcon(windowClass: string, initialClass?: string, title?: string)
     candidates.push(title)
   }
   candidates.push(windowClass)
-  if (initialClass && initialClass !== windowClass) candidates.push(initialClass)
+  if (initialClass && initialClass !== windowClass)
+    candidates.push(initialClass)
   if (!isWebApp && title) candidates.push(title)
 
   for (const candidate of candidates) {
@@ -98,8 +103,7 @@ function resolveIcon(windowClass: string, initialClass?: string, title?: string)
     let icon: string | null = null
 
     // 1. Direct desktop-id lookup (exact + lowercase)
-    icon = tryDesktopId(`${candidate}.desktop`)
-      ?? tryDesktopId(`${lc}.desktop`)
+    icon = tryDesktopId(`${candidate}.desktop`) ?? tryDesktopId(`${lc}.desktop`)
 
     // 2. DesktopAppInfo.search() – the same engine rofi uses for fuzzy matching
     if (!icon) {
@@ -174,14 +178,16 @@ const wsData = createPoll<string>(
     "bash",
     "-c",
     // Outputs three JSON blobs separated by a unique delimiter
-    "echo \"$(hyprctl monitors -j)\"; echo '%%SPLIT%%'; echo \"$(hyprctl clients -j)\"; echo '%%SPLIT%%'; echo \"$(hyprctl workspaces -j)\"",
+    'echo "$(hyprctl monitors -j)"; echo \'%%SPLIT%%\'; echo "$(hyprctl clients -j)"; echo \'%%SPLIT%%\'; echo "$(hyprctl workspaces -j)"',
   ],
   (out) => {
     try {
       const parts = out.split("%%SPLIT%%")
       if (parts.length < 3) return JSON.stringify(EMPTY_STATE)
 
-      const monitors: { activeWorkspace: { id: number } }[] = JSON.parse(parts[0].trim())
+      const monitors: { activeWorkspace: { id: number } }[] = JSON.parse(
+        parts[0].trim(),
+      )
       const clients: {
         workspace: { id: number }
         class: string
@@ -211,7 +217,11 @@ const wsData = createPoll<string>(
           }
         }
 
-        icons[wsId] = resolveIcon(largest.class, largest.initialClass, largest.title)
+        icons[wsId] = resolveIcon(
+          largest.class,
+          largest.initialClass,
+          largest.title,
+        )
       }
 
       return JSON.stringify({ actives, occupied, icons } satisfies WsState)
@@ -224,7 +234,13 @@ const wsData = createPoll<string>(
 
 // ── Widget ───────────────────────────────────────────────
 
-function WsButton({ realId, displayId }: { realId: number; displayId: number }) {
+function WsButton({
+  realId,
+  displayId,
+}: {
+  realId: number
+  displayId: number
+}) {
   return (
     <button
       cursor={Gdk.Cursor.new_from_name("pointer", null)}
@@ -244,7 +260,11 @@ function WsButton({ realId, displayId }: { realId: number; displayId: number }) 
         } catch {}
       }}
     >
-      <box cssClasses={["ws-inner"]} halign={Gtk.Align.CENTER} valign={Gtk.Align.CENTER}>
+      <box
+        cssClasses={["ws-inner"]}
+        halign={Gtk.Align.CENTER}
+        valign={Gtk.Align.CENTER}
+      >
         {/* App icon: shown on any workspace that has windows */}
         <image
           halign={Gtk.Align.CENTER}
