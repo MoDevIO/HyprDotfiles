@@ -37,19 +37,25 @@ export function MainBar() {
       anchor={TOP | LEFT | RIGHT}
       exclusivity={Astal.Exclusivity.EXCLUSIVE}
       layer={Astal.Layer.TOP}
+      marginTop={10}
+      marginBottom={0}
       cssClasses={["bar"]}
       application={app}
     >
       <centerbox
         startWidget={
-          <box halign={Gtk.Align.START} spacing={8}>
+          <box halign={Gtk.Align.START} cssClasses={["bar-island"]}>
             <Clock />
             <Music />
           </box>
         }
-        centerWidget={<Workspaces ids={M1_IDS} />}
+        centerWidget={
+          <box cssClasses={["bar-island"]}>
+            <Workspaces ids={M1_IDS} />
+          </box>
+        }
         endWidget={
-          <box halign={Gtk.Align.END}>
+          <box halign={Gtk.Align.END} cssClasses={["bar-island"]}>
             <SysInfo />
           </box>
         }
@@ -66,11 +72,17 @@ export function SecondaryBar() {
       anchor={TOP | LEFT | RIGHT}
       exclusivity={Astal.Exclusivity.EXCLUSIVE}
       layer={Astal.Layer.TOP}
+      marginTop={6}
+      marginBottom={0}
       cssClasses={["bar"]}
       application={app}
     >
       <centerbox
-        centerWidget={<Workspaces ids={M2_IDS} displayOffset={10} />}
+        centerWidget={
+          <box cssClasses={["bar-island"]}>
+            <Workspaces ids={M2_IDS} displayOffset={10} />
+          </box>
+        }
       />
     </window>
   )
