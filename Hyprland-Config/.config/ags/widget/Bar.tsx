@@ -36,8 +36,10 @@ function introSetup(self: Gtk.Widget, direction?: "left" | "right") {
       const eased = 1 - Math.pow(1 - t, 3)
 
       self.opacity = eased
-      if (direction === "left") self.marginStart = Math.round(startMargin * (1 - eased))
-      if (direction === "right") self.marginEnd = Math.round(startMargin * (1 - eased))
+      if (direction === "left")
+        self.marginStart = Math.round(startMargin * (1 - eased))
+      if (direction === "right")
+        self.marginEnd = Math.round(startMargin * (1 - eased))
 
       if (t >= 1) clearInterval(timer)
     }, stepTime)
@@ -81,7 +83,11 @@ export function MainBar() {
     >
       <centerbox
         startWidget={
-          <box halign={Gtk.Align.START} cssClasses={["bar-island"]} $={(self) => introSetup(self, "left")}>
+          <box
+            halign={Gtk.Align.START}
+            cssClasses={["bar-island"]}
+            $={(self) => introSetup(self, "left")}
+          >
             <Clock />
             <Music />
           </box>
@@ -92,7 +98,11 @@ export function MainBar() {
           </box>
         }
         endWidget={
-          <box halign={Gtk.Align.END} cssClasses={["bar-island"]} $={(self) => introSetup(self, "right")}>
+          <box
+            halign={Gtk.Align.END}
+            cssClasses={["bar-island"]}
+            $={(self) => introSetup(self, "right")}
+          >
             <SysInfo />
           </box>
         }
@@ -109,7 +119,7 @@ export function SecondaryBar() {
       anchor={TOP | LEFT | RIGHT}
       exclusivity={Astal.Exclusivity.EXCLUSIVE}
       layer={Astal.Layer.TOP}
-      marginTop={6}
+      marginTop={10}
       marginBottom={0}
       cssClasses={["bar"]}
       application={app}
