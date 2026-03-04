@@ -1,4 +1,4 @@
-import { Gtk } from "ags/gtk4"
+import { Gtk, Gdk } from "ags/gtk4"
 import { createPoll } from "ags/time"
 
 const time = createPoll("", 1000, "date '+%H:%M:%S'")
@@ -34,7 +34,15 @@ export default function Clock() {
           })
         }}
       />
-      <label cssClasses={["date"]} label={dateStr} />
+      <menubutton
+        cssClasses={["date-btn"]}
+        cursor={Gdk.Cursor.new_from_name("pointer", null)}
+      >
+        <label cssClasses={["date"]} label={dateStr} />
+        <popover cssClasses={["calendar-popover"]}>
+          <Gtk.Calendar />
+        </popover>
+      </menubutton>
     </box>
   )
 }

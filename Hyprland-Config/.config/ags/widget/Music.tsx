@@ -1,5 +1,6 @@
 import { createPoll } from "ags/time"
-import { Gtk } from "ags/gtk4"
+import { Gtk, Gdk } from "ags/gtk4"
+import { exec } from "ags/process"
 
 const musicInfo = createPoll(
   "",
@@ -22,7 +23,37 @@ const musicInfo = createPoll(
 
 export default function Music() {
   return (
-    <box spacing={0} valign={Gtk.Align.CENTER}>
+    <box
+      spacing={0}
+      valign={Gtk.Align.CENTER}
+      $={(self) => {
+        const hover = new Gtk.EventControllerMotion()
+        let rev: Gtk.Revealer | null = null
+
+        const findRevealer = () => {
+          if (rev) return rev
+          let child = self.get_first_child()
+          while (child) {
+            if (child instanceof Gtk.Revealer) {
+              rev = child as Gtk.Revealer
+              return rev
+            }
+            child = child.get_next_sibling()
+          }
+          return null
+        }
+
+        hover.connect("enter", () => {
+          const r = findRevealer()
+          if (r) r.revealChild = true
+        })
+        hover.connect("leave", () => {
+          const r = findRevealer()
+          if (r) r.revealChild = false
+        })
+        self.add_controller(hover)
+      }}
+    >
       {/* Separator between clock/date and music */}
       <box
         cssClasses={["bar-sep"]}
@@ -56,6 +87,48 @@ export default function Music() {
           })
         }}
       />
+      <revealer
+        revealChild={false}
+        transitionType={Gtk.RevealerTransitionType.SLIDE_RIGHT}
+        transitionDuration={250}
+        visible={musicInfo((m) => m.length > 0)}
+      >
+        <box spacing={2} cssClasses={["music-controls"]}>
+          <button
+            cssClasses={["music-btn"]}
+            cursor={Gdk.Cursor.new_from_name("pointer", null)}
+            onClicked={() => {
+              try {
+                exec(["playerctl", "previous"])
+              } catch {}
+            }}
+          >
+            <label label="⏮" />
+          </button>
+          <button
+            cssClasses={["music-btn"]}
+            cursor={Gdk.Cursor.new_from_name("pointer", null)}
+            onClicked={() => {
+              try {
+                exec(["playerctl", "play-pause"])
+              } catch {}
+            }}
+          >
+            <label label="⏯" />
+          </button>
+          <button
+            cssClasses={["music-btn"]}
+            cursor={Gdk.Cursor.new_from_name("pointer", null)}
+            onClicked={() => {
+              try {
+                exec(["playerctl", "next"])
+              } catch {}
+            }}
+          >
+            <label label="⏭" />
+          </button>
+        </box>
+      </revealer>
     </box>
   )
 }

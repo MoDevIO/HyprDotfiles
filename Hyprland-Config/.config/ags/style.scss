@@ -106,6 +106,51 @@ $bar-font: "JetBrains Mono Nerd Font", "Symbols Nerd Font", monospace;
   margin-left: 8px;
 }
 
+// Date button (calendar trigger) – fully invisible
+.date-btn {
+  all: unset;
+  cursor: pointer;
+
+  button {
+    all: unset;
+    cursor: pointer;
+  }
+
+  arrow {
+    all: unset;
+    min-width: 0;
+    min-height: 0;
+  }
+
+  &:hover .date {
+    color: #cccccc;
+  }
+}
+
+// Calendar popover
+.calendar-popover {
+  all: unset;
+  background: rgba(24, 24, 24, 0.95);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 8px;
+  color: $bar-fg;
+  font-family: $bar-font;
+
+  > contents {
+    all: unset;
+    background: transparent;
+    border: none;
+    padding: 4px;
+  }
+
+  > arrow {
+    all: unset;
+    min-width: 0;
+    min-height: 0;
+  }
+}
+
 // ── Section separator ─────────────────────────────────
 .bar-sep {
   min-width: 1px;
@@ -141,4 +186,8 @@ $bar-font: "JetBrains Mono Nerd Font", "Symbols Nerd Font", monospace;
   &:hover {
     background: rgba(204, 204, 204, 0.2);
   }
+}
+
+.music-controls {
+  margin-left: 4px;
 }
