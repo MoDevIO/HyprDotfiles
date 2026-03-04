@@ -259,6 +259,33 @@ function WsButton({
           exec(["hyprctl", "dispatch", "workspace", `${realId}`])
         } catch {}
       }}
+      $={(self) => {
+        let wasActive = false
+        let animating = false
+        self.connect("notify::css-classes", () => {
+          const isActive = self.cssClasses.includes("ws-active")
+          if (isActive && !wasActive && !animating) {
+            // Smooth sine pulse when workspace becomes active
+            animating = true
+            const duration = 350
+            const fps = 60
+            const stepTime = 1000 / fps
+            const totalSteps = Math.ceil(duration / stepTime)
+            let step = 0
+            const timer = setInterval(() => {
+              step++
+              const t = Math.min(step / totalSteps, 1)
+              // Sine pulse: 1.0 → 0.6 → 1.0
+              self.opacity = 1 - 0.4 * Math.sin(t * Math.PI)
+              if (t >= 1) {
+                clearInterval(timer)
+                animating = false
+              }
+            }, stepTime)
+          }
+          wasActive = isActive
+        })
+      }}
     >
       <box
         cssClasses={["ws-inner"]}

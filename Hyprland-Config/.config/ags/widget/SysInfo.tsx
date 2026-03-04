@@ -1,4 +1,5 @@
 import { createPoll } from "ags/time"
+import { Gtk } from "ags/gtk4"
 
 const cpu = createPoll(
   " 0%",
@@ -33,12 +34,45 @@ const vol = createPoll(
   },
 )
 
+// Animated sys-info label: gentle pulse on value change
+function SysLabel({ binding }: { binding: any }) {
+  return (
+    <label
+      cssClasses={["sys-label"]}
+      label={binding}
+      $={(self) => {
+        let animating = false
+        self.connect("notify::label", () => {
+          if (animating) return
+          animating = true
+          const duration = 400
+          const fps = 60
+          const stepTime = 1000 / fps
+          const totalSteps = Math.ceil(duration / stepTime)
+          let step = 0
+          const timer = setInterval(() => {
+            step++
+            const t = Math.min(step / totalSteps, 1)
+            self.opacity = 1 - 0.3 * Math.sin(t * Math.PI)
+            if (t >= 1) {
+              clearInterval(timer)
+              animating = false
+            }
+          }, stepTime)
+        })
+      }}
+    />
+  )
+}
+
 export default function SysInfo() {
   return (
-    <box spacing={4}>
-      <label cssClasses={["sys-label"]} label={cpu} />
-      <label cssClasses={["sys-label"]} label={mem} />
-      <label cssClasses={["sys-label"]} label={vol} />
+    <box spacing={4} valign={Gtk.Align.CENTER}>
+      <SysLabel binding={cpu} />
+      <box cssClasses={["bar-sep"]} valign={Gtk.Align.CENTER} />
+      <SysLabel binding={mem} />
+      <box cssClasses={["bar-sep"]} valign={Gtk.Align.CENTER} />
+      <SysLabel binding={vol} />
     </box>
   )
 }
