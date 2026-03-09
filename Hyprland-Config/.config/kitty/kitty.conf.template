@@ -1,0 +1,80 @@
+font_family             JetBrainsMono Nerd Font
+font_size               13.5
+
+disable_ligatures       no
+enable_audio_bell       no
+
+cursor_shape            block
+
+url_style               curly
+
+remember_window_size    no
+window_padding_width    25
+
+cursor_trail 1
+cursor_trail_start_threshold    0
+
+scrollbar_handle_opacity        0
+scrollbar_track_opacity         0
+scrollbar_track_hover_opacity   0
+confirm_os_window_close         0
+allow_remote_control yes
+listen_on unix:/tmp/mykitty.socket
+
+
+
+
+# Colors
+
+# The basic colors
+foreground              ${THEME_COLOR_FG_COLOR}
+background              ${THEME_COLOR_BG_COLOR}
+selection_foreground    ${THEME_COLOR_TERMINAL_SELECTION_FG_COLOR}
+selection_background    ${THEME_COLOR_TERMINAL_SELECTION_BG_COLOR}
+
+# Cursor colors
+cursor                  ${THEME_COLOR_TERMINAL_CURSOR_COLOR}
+cursor_text_color       ${THEME_COLOR_TERMINAL_CURSOR_TEXT_COLOR}
+
+# URL underline color when hovering with mouse
+url_color               ${THEME_COLOR_TERMINAL_URL_COLOR}
+
+# Tab bar colors
+active_tab_foreground   ${THEME_COLOR_TERMINAL_ACTIVE_TAB_FOREGROUND}
+active_tab_background   ${THEME_COLOR_TERMINAL_ACTIVE_TAB_BACKGROUND}
+inactive_tab_foreground ${THEME_COLOR_TERMINAL_INACTIVE_TAB_FOREGROUND}
+inactive_tab_background ${THEME_COLOR_TERMINAL_INACTIVE_TAB_BACKGROUND}
+
+# The 16 terminal colors
+
+# black
+color0 ${THEME_COLOR_TERMINAL_COLOR_0}
+color8 ${THEME_COLOR_TERMINAL_COLOR_8}
+
+# red
+color1 ${THEME_COLOR_TERMINAL_COLOR_1}
+color9 ${THEME_COLOR_TERMINAL_COLOR_9}
+
+# green
+color2  ${THEME_COLOR_TERMINAL_COLOR_2}
+color10 ${THEME_COLOR_TERMINAL_COLOR_10}
+
+# yellow
+color3  ${THEME_COLOR_TERMINAL_COLOR_3}
+color11 ${THEME_COLOR_TERMINAL_COLOR_11}
+
+# blue
+color4  ${THEME_COLOR_TERMINAL_COLOR_4}
+color12 ${THEME_COLOR_TERMINAL_COLOR_12}
+
+# purple
+color5  ${THEME_COLOR_TERMINAL_COLOR_5}
+color13 ${THEME_COLOR_TERMINAL_COLOR_13}
+
+# cyan
+color6  ${THEME_COLOR_TERMINAL_COLOR_6}
+color14 ${THEME_COLOR_TERMINAL_COLOR_14}
+
+# white
+color7  ${THEME_COLOR_TERMINAL_COLOR_7}
+color15 ${THEME_COLOR_TERMINAL_COLOR_15}

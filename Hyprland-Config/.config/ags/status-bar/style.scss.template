@@ -1,10 +1,10 @@
 // ── Variables ──────────────────────────────────────────
-$bar-bg: rgba(#1A1A1A, 0.9);
-$bar-fg: #ABB2BF;
-$bar-fg-dimmed: #939393;
-$ws-selected: #D4D4D4;
-$ws-active: #444444;
-$ws-inactive: #232323;
+$bar-bg: rgba(${THEME_COLOR_BG_COLOR}, 0.9);
+$bar-fg: ${THEME_COLOR_FG_COLOR};
+$bar-fg-dimmed: ${THEME_COLOR_FG_DIMMED};
+$ws-selected: ${THEME_COLOR_SELECTED_WORKSPACE};
+$ws-active: ${THEME_COLOR_ACTIVE_WORKSPACE};
+$ws-inactive: ${THEME_COLOR_INACTIVE_WORKSPACE};
 $bar-font: "JetBrains Mono Nerd Font", "Symbols Nerd Font", monospace;
 
 // ── Bar ───────────────────────────────────────────────
@@ -62,7 +62,7 @@ $bar-font: "JetBrains Mono Nerd Font", "Symbols Nerd Font", monospace;
 
   &.ws-active {
     background: $ws-selected;
-    color: #1A1A1A;
+    color: ${THEME_COLOR_BG_COLOR};
     min-width: 44px;
     box-shadow: 0 0 10px rgba($ws-selected, 0.25);
     /* intentionally no hover effect for the active workspace */
@@ -135,7 +135,7 @@ $bar-font: "JetBrains Mono Nerd Font", "Symbols Nerd Font", monospace;
 // Calendar popover
 .calendar-popover {
   all: unset;
-  background: rgba(#1A1A1A, 0.95);
+  background: rgba(${THEME_COLOR_BG_COLOR}, 0.95);
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   padding: 8px;
