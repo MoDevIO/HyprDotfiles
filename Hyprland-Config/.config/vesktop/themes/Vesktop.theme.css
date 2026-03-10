@@ -1,7 +1,7 @@
 /**
- * @name grayscale
- * @description A clean grayscale Discord theme (Vencord). Based on 'midnight' structure.
- * @author generated
+ * @name Vesktop
+ * @description 
+ * @author  hypr
  * @version 1.0.0
  */
 
@@ -55,28 +55,28 @@ body {
   --colors: on;
 
   /* base grayscale scale - matched to kitty terminal colors */
-  --gray-1: #ffffff; /* white - cursor */
-  --gray-2: #d0d0d0; /* foreground - main text */
-  --gray-3: #aaaaaa; /* lighter mid-gray */
-  --gray-4: #888888; /* mid-gray */
-  --gray-5: #666666; /* darker mid-gray */
-  --gray-6: #444444; /* selection bg */
-  --gray-7: #2a2a2a; /* dark panel */
-  --gray-8: #121212; /* background - darkest */
+  --gray-1: #fefefe; /* brightest */
+  --gray-2: #D3C6AA; /* foreground - main text */
+  --gray-3: #acac9a; /* lighter mid */
+  --gray-4: #859289; /* mid */
+  --gray-5: #67736b; /* darker mid */
+  --gray-6: #4e5c66; /* selection bg */
+  --gray-7: #3a454c; /* dark panel */
+  --gray-8: #262d32; /* background - darkest */
 
   /* text */
   --text-0: var(--bg-4);
-  --text-1: #f5f5f5; /* much lighter main text */
-  --text-2: #e0e0e0;
-  --text-3: #cccccc;
-  --text-4: #b0b0b0;
-  --text-5: #888888;
+  --text-1: #fefefe;
+  --text-2: #D3C6AA;
+  --text-3: #acac9a;
+  --text-4: #859289;
+  --text-5: #859289;
 
   /* backgrounds */
-  --bg-1: #2a2a2a; /* active/click */
-  --bg-2: #1f1f1f; /* buttons */
-  --bg-3: #1a1a1a; /* panels */
-  --bg-4: #202020; /* main background - matches kitty */
+  --bg-1: #3a454c; /* active/click */
+  --bg-2: #2f383e; /* buttons */
+  --bg-3: #2D353B; /* panels */
+  --bg-4: #313a41; /* main background */
   --hover: rgba(255, 255, 255, 0.03);
   --active: rgba(255, 255, 255, 0.06);
   --active-2: rgba(255, 255, 255, 0.09);

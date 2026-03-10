@@ -42,7 +42,8 @@ $bar-font: "JetBrains Mono Nerd Font", "Symbols Nerd Font", monospace;
     background 280ms ease-in-out,
     color 220ms ease-in-out,
     min-width 350ms ease-in-out,
-    box-shadow 300ms ease-in-out;
+    box-shadow 300ms ease-in-out,
+    border-radius 300ms ease-in-out;
 
   &:first-child {
     margin-left: 0;
@@ -65,6 +66,7 @@ $bar-font: "JetBrains Mono Nerd Font", "Symbols Nerd Font", monospace;
     color: ${THEME_COLOR_BG_COLOR};
     min-width: 44px;
     box-shadow: 0 0 10px rgba($ws-selected, 0.25);
+    border-radius: 6px;
     /* intentionally no hover effect for the active workspace */
   }
 

@@ -1,6 +1,14 @@
 #!/bin/sh
 # source the palette
-[ -f "$HOME/.config/custom/theme1.sh" ] && . "$HOME/.config/custom/theme1.sh"
+
+# --- Select Theme ---
+THEME="theme1"
+# --- ---  --  --- ---
+
+# If available load theme from argument
+THEME="${1:-$THEME}"
+
+[ -f "$HOME/.config/custom/${THEME}.sh" ] && . "$HOME/.config/custom/${THEME}.sh"
 
 # Build list of THEME_COLOR_* vars for selective envsubst (avoids clobbering SCSS $vars)
 THEME_VARS=$(env | grep -o '^THEME_COLOR_[A-Za-z0-9_]*' | sed 's/^/$/g' | tr '\n' ' ')
@@ -16,6 +24,15 @@ envsubst "$THEME_VARS" < "$HOME/.config/ags/status-bar/style.scss.template" \
 sass --no-source-map "$HOME/.config/ags/status-bar/style.scss" \
                      "$HOME/.config/ags/status-bar/style.css"
 busctl --user call io.Astal.status-bar /io/Astal/Application io.Astal.Application Request as 1 reload-css
+
+# Vesktop
+envsubst < "$HOME/.config/vesktop/themes/vesktop.theme.css.template" \
+        > "$HOME/.config/vesktop/themes/Vesktop.theme.css"
+
+# Swaync
+envsubst < "$HOME/.config/swaync/style.css.template" \
+        > "$HOME/.config/swaync/style.css"
+swaync-client -rs 2>/dev/null
 
 
 

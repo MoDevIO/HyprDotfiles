@@ -5,7 +5,9 @@
     "themeLinks": [],
     "eagerPatches": false,
     "enabledThemes": [
-        "grayscale.theme.css"
+        "grayscale.theme.css",
+        "hypr.theme.css",
+        "Vesktop.theme.css"
     ],
     "enableReactDevtools": false,
     "frameless": false,
@@ -42,7 +44,7 @@
             "enabled": false
         },
         "ServerListAPI": {
-            "enabled": false
+            "enabled": true
         },
         "UserSettingsAPI": {
             "enabled": true
@@ -78,7 +80,9 @@
             "enabled": false
         },
         "BetterNotesBox": {
-            "enabled": false
+            "enabled": true,
+            "hide": true,
+            "noSpellCheck": false
         },
         "BetterRoleContext": {
             "enabled": false
@@ -96,7 +100,7 @@
             "enabled": false
         },
         "BiggerStreamPreview": {
-            "enabled": false
+            "enabled": true
         },
         "BlurNSFW": {
             "enabled": true,
@@ -184,7 +188,8 @@
             "enabled": false
         },
         "FixSpotifyEmbeds": {
-            "enabled": false
+            "enabled": true,
+            "volume": 10
         },
         "FixYoutubeEmbeds": {
             "enabled": false
@@ -367,7 +372,7 @@
             "enabled": false
         },
         "ReadAllNotificationsButton": {
-            "enabled": false
+            "enabled": true
         },
         "RelationshipNotifier": {
             "enabled": false
@@ -493,7 +498,7 @@
             "enabled": false
         },
         "ValidUser": {
-            "enabled": false
+            "enabled": true
         },
         "VoiceChatDoubleClick": {
             "enabled": false
@@ -572,6 +577,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1771362534535
+        "settingsSyncVersion": 1773160158991
     }
 }

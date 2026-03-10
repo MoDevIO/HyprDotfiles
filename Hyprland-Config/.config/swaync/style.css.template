@@ -27,29 +27,29 @@ scale trough {
 trough slider {
   margin: -8px;
   border-radius: 50%;
-  background-color: #859289;
+  background-color: ${THEME_COLOR_FG_DIMMED};
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
   transition: all 0.2s ease;
 }
 
 trough slider:hover {
-  background-color: #A7C080;
+  background-color: ${THEME_COLOR_ACCENT};
   box-shadow: 0 0 6px rgba(212, 212, 212, 0.3);
 }
 
 trough {
-  background-color: #47545e;
+  background-color: ${THEME_COLOR_SWAYNC_BG_HOVER};
 }
 
 /* ── Notifications (floating) ──────────────────────────── */
 
 .notification-background {
   box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.6);
-  border: 2px solid rgba(167, 192, 128, 0.8);
+  border: 2px solid ${THEME_COLOR_BORDER};
   border-radius: 10px;
   margin: 28px;
-  background: #2b3238;
-  color: #A7C080;
+  background: ${THEME_COLOR_SWAYNC_BG};
+  color: ${THEME_COLOR_ACCENT};
   padding: 0;
 }
 
@@ -71,16 +71,16 @@ trough {
 }
 
 .notification-content .summary {
-  color: #ede8dc;
+  color: ${THEME_COLOR_SWAYNC_TEXT_BRIGHT};
   font-weight: bold;
 }
 
 .notification-content .time {
-  color: #859289;
+  color: ${THEME_COLOR_FG_DIMMED};
 }
 
 .notification-content .body {
-  color: #D3C6AA;
+  color: ${THEME_COLOR_FG_COLOR};
 }
 
 .notification > *:last-child > * {
@@ -93,41 +93,41 @@ trough {
   min-width: 24px;
   min-height: 24px;
   border-radius: 8px;
-  color: #2b3238;
-  background-color: #A7C080;
+  color: ${THEME_COLOR_SWAYNC_BG};
+  background-color: ${THEME_COLOR_ACCENT};
   font-weight: bold;
 }
 
 .notification-background .close-button:hover {
-  background-color: #ede8dc;
+  background-color: ${THEME_COLOR_SWAYNC_TEXT_BRIGHT};
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
 }
 
 .notification-background .close-button:active {
-  background-color: #b4b19d;
+  background-color: ${THEME_COLOR_SWAYNC_SLIDER};
 }
 
 /* ── Notification actions ──────────────────────────────── */
 
 .notification .notification-action {
   border-radius: 8px;
-  color: #2b3238;
+  color: ${THEME_COLOR_SWAYNC_BG};
   border: none;
   box-shadow: none;
   margin: 4px;
   padding: 10px 14px;
   font-size: 0.2rem;
-  background-color: #A7C080;
+  background-color: ${THEME_COLOR_ACCENT};
   font-weight: bold;
 }
 
 .notification .notification-action:hover {
-  background-color: #ede8dc;
+  background-color: ${THEME_COLOR_SWAYNC_TEXT_BRIGHT};
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
 }
 
 .notification .notification-action:active {
-  background-color: #b4b19d;
+  background-color: ${THEME_COLOR_SWAYNC_SLIDER};
 }
 
 /* ── Progress bars ─────────────────────────────────────── */
@@ -152,11 +152,11 @@ trough {
 
 .control-center {
   box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.6);
-  border: 2px solid rgba(167, 192, 128, 0.8);
+  border: 2px solid ${THEME_COLOR_BORDER};
   border-radius: 10px;
   margin: 18px;
-  background-color: #2b3238;
-  color: #A7C080;
+  background-color: ${THEME_COLOR_SWAYNC_BG};
+  color: ${THEME_COLOR_ACCENT};
   padding: 24px;
 }
 
@@ -176,7 +176,7 @@ trough {
 }
 
 .control-center .widget-title > label {
-  color: #ede8dc;
+  color: ${THEME_COLOR_SWAYNC_TEXT_BRIGHT};
   font-size: 1.3em;
   font-weight: bold;
   margin: 8px 4px;
@@ -184,8 +184,8 @@ trough {
 
 .control-center .widget-title button {
   border-radius: 8px;
-  color: #2b3238;
-  background-color: #A7C080;
+  color: ${THEME_COLOR_SWAYNC_BG};
+  background-color: ${THEME_COLOR_ACCENT};
   border: none;
   box-shadow: none;
   padding: 10px 14px;
@@ -193,12 +193,12 @@ trough {
 }
 
 .control-center .widget-title button:hover {
-  background-color: #ede8dc;
+  background-color: ${THEME_COLOR_SWAYNC_TEXT_BRIGHT};
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
 }
 
 .control-center .widget-title button:active {
-  background-color: #b4b19d;
+  background-color: ${THEME_COLOR_SWAYNC_SLIDER};
 }
 
 .control-center .notification-group {
@@ -206,7 +206,7 @@ trough {
 }
 
 .control-center .notification-group:focus .notification-background {
-  background-color: #3a454c;
+  background-color: ${THEME_COLOR_SWAYNC_BG_ELEVATED};
 }
 
 /* ── Scrollbar ─────────────────────────────────────────── */
@@ -233,7 +233,7 @@ scrollbar trough {
 .widget-dnd > switch {
   font-size: initial;
   border-radius: 6px;
-  background: #3a454c;
+  background: ${THEME_COLOR_SWAYNC_BG_ELEVATED};
   border: 2px solid rgba(255, 255, 255, 0.15);
   box-shadow: none;
   min-width: 52px;
@@ -242,32 +242,32 @@ scrollbar trough {
 }
 
 .widget-dnd > switch:checked {
-  background: #A7C080;
-  border-color: #A7C080;
+  background: ${THEME_COLOR_ACCENT};
+  border-color: ${THEME_COLOR_ACCENT};
 }
 
 .widget-dnd > switch slider {
-  background: #A7C080;
+  background: ${THEME_COLOR_ACCENT};
   border-radius: 4px;
   min-width: 22px;
   min-height: 18px;
 }
 
 .widget-dnd > switch:checked slider {
-  background: #2b3238;
+  background: ${THEME_COLOR_SWAYNC_BG};
 }
 
 /* ── MPRIS (media player) ──────────────────────────────── */
 
 .widget-mpris-player {
-  background: #3a454c;
+  background: ${THEME_COLOR_SWAYNC_BG_ELEVATED};
   border-radius: 10px;
-  color: #A7C080;
+  color: ${THEME_COLOR_ACCENT};
   margin: 10px 4px;
 }
 
 .mpris-overlay {
-  background-color: #2D353B;
+  background-color: ${THEME_COLOR_BG_COLOR};
   padding: 18px 14px;
   border-radius: 10px;
 }
@@ -281,17 +281,17 @@ scrollbar trough {
 .widget-mpris-title {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #ede8dc;
+  color: ${THEME_COLOR_SWAYNC_TEXT_BRIGHT};
 }
 
 .widget-mpris-subtitle {
   font-size: 1rem;
-  color: #859289;
+  color: ${THEME_COLOR_FG_DIMMED};
 }
 
 .widget-mpris button {
   border-radius: 8px;
-  color: #A7C080;
+  color: ${THEME_COLOR_ACCENT};
   margin: 0 5px;
   padding: 6px;
   background-color: transparent;
@@ -302,12 +302,12 @@ scrollbar trough {
 }
 
 .widget-mpris button:hover {
-  background-color: #47545e;
+  background-color: ${THEME_COLOR_SWAYNC_BG_HOVER};
   box-shadow: 0 0 6px rgba(255, 255, 255, 0.1);
 }
 
 .widget-mpris button:active {
-  background-color: #5e6e7b;
+  background-color: ${THEME_COLOR_SWAYNC_BG_PRESSED};
 }
 
 .widget-mpris button:disabled {
@@ -322,7 +322,7 @@ scrollbar trough {
 }
 
 .widget-menubar > box > .menu-button-bar > :last-child {
-  color: #A7C080;
+  color: ${THEME_COLOR_ACCENT};
 }
 
 .power-buttons button,
@@ -330,27 +330,27 @@ scrollbar trough {
 .screenshot-buttons button {
   border-radius: 8px;
   padding: 10px;
-  color: #A7C080;
+  color: ${THEME_COLOR_ACCENT};
   background: transparent;
 }
 
 .power-buttons button:hover,
 .powermode-buttons button:hover,
 .screenshot-buttons button:hover {
-  background: #3a454c;
+  background: ${THEME_COLOR_SWAYNC_BG_ELEVATED};
   box-shadow: 0 0 6px rgba(255, 255, 255, 0.1);
 }
 
 .power-buttons button:active,
 .powermode-buttons button:active,
 .screenshot-buttons button:active {
-  background: #505f69;
+  background: ${THEME_COLOR_SWAYNC_BG_ACTIVE};
 }
 
 /* ── Labels ────────────────────────────────────────────── */
 
 .control-center .widget-label > label {
-  color: #A7C080;
+  color: ${THEME_COLOR_ACCENT};
   font-size: 2rem;
   margin: 8px 4px;
 }
@@ -366,7 +366,7 @@ scrollbar trough {
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button {
-  background: #3a454c;
+  background: ${THEME_COLOR_SWAYNC_BG_ELEVATED};
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: none;
@@ -377,19 +377,19 @@ scrollbar trough {
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button:hover {
-  background: #47545e;
+  background: ${THEME_COLOR_SWAYNC_BG_HOVER};
   border-color: rgba(255, 255, 255, 0.25);
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
-  background: #A7C080;
-  color: #2b3238;
-  border-color: #A7C080;
+  background: ${THEME_COLOR_ACCENT};
+  color: ${THEME_COLOR_SWAYNC_BG};
+  border-color: ${THEME_COLOR_ACCENT};
   box-shadow: 0 0 12px rgba(212, 212, 212, 0.25);
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked:hover {
-  background: #ede8dc;
+  background: ${THEME_COLOR_SWAYNC_TEXT_BRIGHT};
 }
 
 /* ── Volume ────────────────────────────────────────────── */
@@ -399,7 +399,7 @@ scrollbar trough {
 }
 
 .widget-volume label {
-  color: #D3C6AA;
+  color: ${THEME_COLOR_FG_COLOR};
   padding: 0 1rem;
 }
 
@@ -415,7 +415,7 @@ scrollbar trough {
 
 .widget-backlight label {
   font-size: 1.5rem;
-  color: #D3C6AA;
+  color: ${THEME_COLOR_FG_COLOR};
 }
 
 .widget-backlight .KB {
