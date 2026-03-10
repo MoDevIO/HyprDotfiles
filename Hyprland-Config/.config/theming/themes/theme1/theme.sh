@@ -1,7 +1,7 @@
 # ══════════════════════════════════════════════
 #  Theme 1 — One Dark
 # ══════════════════════════════════════════════
-CU="$HOME/.config/custom/color-util.py"
+CU="$HOME/.config/theming/color-util.py"
 c() { python3 "$CU" "$@"; }
 
 # === Main Colors ===

@@ -2,13 +2,13 @@
 # source the palette
 
 # --- Select Theme ---
-THEME="theme1"
+THEME="grayscale"
 # --- ---  --  --- ---
 
 # If available load theme from argument
 THEME="${1:-$THEME}"
 
-[ -f "$HOME/.config/custom/${THEME}.sh" ] && . "$HOME/.config/custom/${THEME}.sh"
+[ -f "$HOME/.config/theming/themes/${THEME}/theme.sh" ] && . "$HOME/.config/theming/themes/${THEME}/theme.sh"
 
 # Build list of THEME_COLOR_* vars for selective envsubst (avoids clobbering SCSS $vars)
 THEME_VARS=$(env | grep -o '^THEME_COLOR_[A-Za-z0-9_]*' | sed 's/^/$/g' | tr '\n' ' ')
