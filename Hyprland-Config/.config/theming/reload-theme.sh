@@ -10,6 +10,8 @@ THEME="${1:-$THEME}"
 
 [ -f "$HOME/.config/theming/themes/${THEME}/theme.sh" ] && . "$HOME/.config/theming/themes/${THEME}/theme.sh"
 
+notify-send "Applying Theme..." "$THEME" -t 2000
+
 # Build list of THEME_COLOR_* vars for selective envsubst (avoids clobbering SCSS $vars)
 THEME_VARS=$(env | grep -o '^THEME_COLOR_[A-Za-z0-9_]*' | sed 's/^/$/g' | tr '\n' ' ')
 
@@ -37,6 +39,10 @@ swaync-client -rs 2>/dev/null
 # Cava
 envsubst < "$HOME/.config/cava/config.template" \
         > "$HOME/.config/cava/config"
+
+# Rofi
+envsubst < "$HOME/.config/rofi/colors.rasi.template" \
+        > "$HOME/.config/rofi/colors.rasi"
 
 # Hyprland
 envsubst < "$HOME/.config/hypr/hyprland/design.conf.template" \
