@@ -42,5 +42,7 @@ elif cmd == "darken":
     print(darken(args[0], float(args[1])))
 elif cmd == "mix":
     print(mix(args[0], args[1], float(args[2])))
+elif cmd == "strip":
+    print(args[0].lstrip("#"))
 else:
     sys.exit(f"Unknown command: {cmd}")

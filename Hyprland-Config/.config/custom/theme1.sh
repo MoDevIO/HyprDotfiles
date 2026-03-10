@@ -62,3 +62,10 @@ export THEME_COLOR_SWAYNC_BG_ACTIVE=$(c lighten "$THEME_COLOR_BG_COLOR" 16)
 export THEME_COLOR_SWAYNC_BG_PRESSED=$(c lighten "$THEME_COLOR_BG_COLOR" 22)
 export THEME_COLOR_SWAYNC_TEXT_BRIGHT=$(c lighten "$THEME_COLOR_FG_COLOR" 15)
 export THEME_COLOR_SWAYNC_SLIDER=$(c mix "$THEME_COLOR_FG_COLOR" "$THEME_COLOR_FG_DIMMED" 40)
+
+# === Computed: Hyprland (rgba without #, with alpha suffix) ===
+export THEME_COLOR_HYPR_ACTIVE_BORDER_1="$(c strip "$THEME_COLOR_ACCENT")cc"
+export THEME_COLOR_HYPR_ACTIVE_BORDER_2="$(c strip $(c darken "$THEME_COLOR_ACCENT" 30))ff"
+export THEME_COLOR_HYPR_INACTIVE_BORDER_1="$(c strip $(c lighten "$THEME_COLOR_BG_COLOR" 10))ff"
+export THEME_COLOR_HYPR_INACTIVE_BORDER_2="$(c strip $(c lighten "$THEME_COLOR_BG_COLOR" 10))55"
+export THEME_COLOR_HYPR_SHADOW="$(c strip "$THEME_COLOR_BG_COLOR")ee"

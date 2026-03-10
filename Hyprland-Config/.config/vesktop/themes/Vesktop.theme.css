@@ -55,28 +55,28 @@ body {
   --colors: on;
 
   /* base grayscale scale - matched to kitty terminal colors */
-  --gray-1: #fefefe; /* brightest */
-  --gray-2: #D3C6AA; /* foreground - main text */
-  --gray-3: #acac9a; /* lighter mid */
-  --gray-4: #859289; /* mid */
-  --gray-5: #67736b; /* darker mid */
-  --gray-6: #4e5c66; /* selection bg */
-  --gray-7: #3a454c; /* dark panel */
-  --gray-8: #262d32; /* background - darkest */
+  --gray-1: #f3f4f6; /* brightest */
+  --gray-2: #ABB2BF; /* foreground - main text */
+  --gray-3: #9fa2a9; /* lighter mid */
+  --gray-4: #939393; /* mid */
+  --gray-5: #747474; /* darker mid */
+  --gray-6: #404040; /* selection bg */
+  --gray-7: #292929; /* dark panel */
+  --gray-8: #121212; /* background - darkest */
 
   /* text */
   --text-0: var(--bg-4);
-  --text-1: #fefefe;
-  --text-2: #D3C6AA;
-  --text-3: #acac9a;
-  --text-4: #859289;
-  --text-5: #859289;
+  --text-1: #f3f4f6;
+  --text-2: #ABB2BF;
+  --text-3: #9fa2a9;
+  --text-4: #939393;
+  --text-5: #939393;
 
   /* backgrounds */
-  --bg-1: #3a454c; /* active/click */
-  --bg-2: #2f383e; /* buttons */
-  --bg-3: #2D353B; /* panels */
-  --bg-4: #313a41; /* main background */
+  --bg-1: #292929; /* active/click */
+  --bg-2: #1d1d1d; /* buttons */
+  --bg-3: #1A1A1A; /* panels */
+  --bg-4: #1f1f1f; /* main background */
   --hover: rgba(255, 255, 255, 0.03);
   --active: rgba(255, 255, 255, 0.06);
   --active-2: rgba(255, 255, 255, 0.09);

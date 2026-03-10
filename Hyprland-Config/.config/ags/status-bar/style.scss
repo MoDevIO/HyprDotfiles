@@ -1,10 +1,10 @@
 // ── Variables ──────────────────────────────────────────
-$bar-bg: rgba(#2D353B, 0.9);
-$bar-fg: #D3C6AA;
-$bar-fg-dimmed: #859289;
-$ws-selected: #A7C080;
-$ws-active: #4e5c66;
-$ws-inactive: #363f47;
+$bar-bg: rgba(#1A1A1A, 0.9);
+$bar-fg: #ABB2BF;
+$bar-fg-dimmed: #939393;
+$ws-selected: #D7DAE0;
+$ws-active: #404040;
+$ws-inactive: #242424;
 $bar-font: "JetBrains Mono Nerd Font", "Symbols Nerd Font", monospace;
 
 // ── Bar ───────────────────────────────────────────────
@@ -63,7 +63,7 @@ $bar-font: "JetBrains Mono Nerd Font", "Symbols Nerd Font", monospace;
 
   &.ws-active {
     background: $ws-selected;
-    color: #2D353B;
+    color: #1A1A1A;
     min-width: 44px;
     box-shadow: 0 0 10px rgba($ws-selected, 0.25);
     border-radius: 6px;
@@ -137,7 +137,7 @@ $bar-font: "JetBrains Mono Nerd Font", "Symbols Nerd Font", monospace;
 // Calendar popover
 .calendar-popover {
   all: unset;
-  background: rgba(#2D353B, 0.95);
+  background: rgba(#1A1A1A, 0.95);
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   padding: 8px;

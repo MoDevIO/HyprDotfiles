@@ -7,8 +7,8 @@ general {
 
     border_size = 3
 
-    col.active_border = rgba(D7DAE0cc) rgba(818a9dff) 45deg
-    col.inactive_border = rgba(343434ff) rgba(34343455) 45deg
+    col.active_border = rgba(${THEME_COLOR_HYPR_ACTIVE_BORDER_1}) rgba(${THEME_COLOR_HYPR_ACTIVE_BORDER_2}) 45deg
+    col.inactive_border = rgba(${THEME_COLOR_HYPR_INACTIVE_BORDER_1}) rgba(${THEME_COLOR_HYPR_INACTIVE_BORDER_2}) 45deg
 
     layout = dwindle
     
@@ -27,7 +27,7 @@ decoration {
         enabled = true 
         range = 2
         render_power = 3
-        color = rgba(1A1A1Aee)
+        color = rgba(${THEME_COLOR_HYPR_SHADOW})
     }
 
     # https://wiki.hypr.land/Configuring/Variables/#blur
