@@ -40,8 +40,11 @@ TRANSITION_ARGS_2=(
 )
 
 # Path to your images
-BLACK_IMG="$HOME/.config/hypr/wallpapers/black.ppm"
-WALLPAPER="$HOME/.config/hypr/wallpapers/macos_minimal.jpg"
+BLACK_IMG="$HOME/.config/hypr/black-wallpaper.ppm"
+CURRENT_THEME=$(cat "$HOME/.config/theming/current-theme" 2>/dev/null || echo "grayscale")
+THEME_DIR="$HOME/.config/theming/themes/$CURRENT_THEME"
+WALLPAPER=$(find "$THEME_DIR" -maxdepth 1 -type f \( -name '*.jpg' -o -name '*.jpeg' -o -name '*.png' -o -name '*.webp' \) | head -1)
+WALLPAPER="${WALLPAPER:-$HOME/.config/hypr/wallpapers/macos_minimal.jpg}"
 
 # 4. EXECUTION
 

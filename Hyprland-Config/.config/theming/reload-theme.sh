@@ -8,6 +8,9 @@ THEME="grayscale"
 # If available load theme from argument
 THEME="${1:-$THEME}"
 
+# Persist current theme name for other scripts (wallpaper, etc.)
+echo "$THEME" > "$HOME/.config/theming/current-theme"
+
 [ -f "$HOME/.config/theming/themes/${THEME}/theme.sh" ] && . "$HOME/.config/theming/themes/${THEME}/theme.sh"
 
 notify-send "Applying Theme..." "$THEME" -t 2000
@@ -48,6 +51,17 @@ envsubst < "$HOME/.config/rofi/colors.rasi.template" \
 envsubst < "$HOME/.config/hypr/hyprland/design.conf.template" \
         > "$HOME/.config/hypr/hyprland/design.conf"
 hyprctl reload 2>/dev/null
+
+# Wallpaper (swww)
+THEME_DIR="$HOME/.config/theming/themes/${THEME}"
+WALLPAPER=$(find "$THEME_DIR" -maxdepth 1 -type f \( -name '*.jpg' -o -name '*.jpeg' -o -name '*.png' -o -name '*.webp' \) | head -1)
+if [ -n "$WALLPAPER" ]; then
+    swww img -o DP-1 "$WALLPAPER" --resize crop \
+        --transition-type grow --transition-pos 0.5,0.5 \
+        --transition-duration 1.2 --transition-fps 144
+    swww img -o HDMI-A-1 "$WALLPAPER" --resize crop \
+        --transition-type simple --transition-fps 144
+fi
 
 
 
