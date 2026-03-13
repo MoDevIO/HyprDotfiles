@@ -206,6 +206,10 @@ apply_theme() {
             | sed -E 's/^([[:space:]]*[A-Za-z0-9-]+[[:space:]]*=[[:space:]]*)#/\1/' \
             > "$HOME/.config/spicetify/Themes/marketplace/color.ini"
 
+        # Fastfetch
+        envsubst "$THEME_VARS" < "$HOME/.config/fastfetch/config.jsonc.template" \
+            > "$HOME/.config/fastfetch/config.jsonc"
+
 
     # Hyprland
     envsubst < "$HOME/.config/hypr/hyprland/design.conf.template" \
