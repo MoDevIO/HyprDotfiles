@@ -73,7 +73,7 @@
     "menu.selectionForeground": "${THEME_COLOR_FG_COLOR}",
     "button.background": "${THEME_COLOR_ACCENT}",
     "button.foreground": "${THEME_COLOR_BG_COLOR}",
-    "button.hoverBackground": "${THEME_COLOR_TERMINAL_COLOR_10}",
+    "button.hoverBackground": "${THEME_COLOR_ACCENT}90",
     "button.separator": "${THEME_COLOR_FG_DIMMED}30",
     "button.secondaryBackground": "${THEME_COLOR_TERMINAL_COLOR_0}",
     "button.secondaryForeground": "${THEME_COLOR_FG_COLOR}",
