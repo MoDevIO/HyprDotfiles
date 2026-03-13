@@ -1,6 +1,6 @@
-# MyHypr
+# My Hyprland Dotfiles
 
-My personal Hyprland rice with a unified theming system — one command switches colors across all apps.
+My personal Hyprland rice setup...
 
 ## Screenshots
 
