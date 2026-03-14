@@ -6,8 +6,8 @@ c() { python3 "$CU" "$@"; }
 
 # === Main Colors ===
 export THEME_COLOR_BG_COLOR="#151B23"
-export THEME_COLOR_FG_COLOR="#C0CEDB"
-export THEME_COLOR_FG_DIMMED="#6B8299"
+export THEME_COLOR_FG_COLOR="#A8D1FF"
+export THEME_COLOR_FG_DIMMED="#5C85B2"
 export THEME_COLOR_ACCENT="#7ABAFF"
 export THEME_COLOR_BORDER="rgba(122, 186, 255, 0.8)"
 
